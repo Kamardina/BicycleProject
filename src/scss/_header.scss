@@ -1,0 +1,141 @@
+.wrapper {
+}
+
+.container {
+   max-width: 1180px;
+   margin: 0 auto;
+   padding: 0 10px;
+}
+.header {
+   position: fixed;
+   width: 100%;
+   top: 0;
+   left: 0;
+   z-index: 50;
+
+   &:before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgb(52, 192, 157);
+      z-index: 3;
+   }
+
+   &__body {
+      position: relative;
+      display: flex;
+      justify-content: space-between;
+      height: 80px;
+      align-items: center;
+   }
+
+   &__logo {
+      position: relative;
+      z-index: 3;
+   }
+
+   &__burger {
+      display: none;
+   }
+
+   &__menu {
+   }
+
+   &__list {
+      display: flex;
+      position: relative;
+      z-index: 4;
+
+      li {
+         margin: 0px 0px 0px 20px;
+      }
+   }
+
+   &__link {
+      text-transform: uppercase;
+      font-size: 18px;
+      text-decoration: none;
+      color: #fff;
+   }
+
+   @media (max-width: 767px) {
+      body.lock {
+         overflow: hidden;
+      }
+      &__body {
+         height: 50px;
+      }
+      &__burger {
+         display: block;
+         position: relative;
+         width: 30px;
+         height: 20px;
+         position: relative;
+         z-index: 3;
+      }
+      &__burger span {
+         position: absolute;
+         background-color: #fff;
+         left: 0;
+         width: 100%;
+         height: 2px;
+         top: 9px;
+         transition: all 0.3s ease 0s;
+      }
+      &__burger:before,
+      &__burger:after {
+         content: "";
+         background-color: #fff;
+         position: absolute;
+         width: 100%;
+         height: 2px;
+         left: 0;
+         transition: all 0.3s ease 0s;
+      }
+      &__burger:before {
+         top: 0;
+      }
+      &__burger:after {
+         bottom: 0;
+      }
+      &__burger.active:before {
+         transform: rotate(45deg);
+         top: 9px;
+      }
+      &__burger.active:after {
+         transform: rotate(-45deg);
+         bottom: 9px;
+      }
+      &__burger.active span {
+         transform: scale(0);
+      }
+      &__menu {
+         position: fixed;
+         top: -100%;
+         left: 0;
+         width: 100%;
+         height: 100%;
+         background-color: #0e0f0f;
+         padding: 30px 10px 20px 10px;
+         transition: all 0.3s ease 0s;
+         overflow: auto;
+      }
+      &__menu.active {
+         top: 0;
+      }
+      &__list {
+         display: block;
+         li {
+            margin: 0px 0px 20px 0px;
+         }
+      }
+      &__link {
+         font-size: 24px;
+      }
+   }
+}
+.container {
+}
