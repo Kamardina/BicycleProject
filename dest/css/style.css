@@ -517,6 +517,35 @@ textarea {
   left: 0;
 }
 
+.generation {
+  padding: 120px 0px;
+  background-color: #f7f7f7;
+}
+
+.block {
+  text-align: center;
+}
+
+.block__icon {
+  margin: 0px 0px 33px 0px;
+}
+
+.block__title {
+  color: #353738;
+  font-size: 18px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 3.6px;
+  margin: 0px 0px 18px 0px;
+  line-height: 24px;
+}
+
+.block__text {
+  color: #848789;
+  font-size: 18px;
+  line-height: 34px;
+}
+
 .header {
   position: absolute;
   width: 100%;
@@ -593,6 +622,12 @@ textarea {
   text-transform: uppercase;
   letter-spacing: 2.6px;
   text-decoration: none;
+}
+
+@media (max-width: 900px) {
+  .generation {
+    padding: 80px 0px;
+  }
 }
 
 @media (max-width: 767px) {
@@ -717,5 +752,11 @@ textarea {
     -ms-transform: rotate(45deg);
     transform: rotate(45deg);
     bottom: 8px;
+  }
+}
+
+@media (max-width: 600px) {
+  .generation {
+    padding: 30px 0px;
   }
 }
