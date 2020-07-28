@@ -41,7 +41,7 @@
 }
 .content {
 }
-
+// =====================================================================================
 .generation {
   padding: 120px 0px;
   background-color: #f7f7f7;
@@ -57,7 +57,7 @@
 .block {
   text-align: center;
   &__icon {
-    margin: 0px 0px 33px 0px;
+    margin: 0px 0px 30px 0px;
   }
 
   &__title {
@@ -74,8 +74,115 @@
     color: #848789;
     font-size: 18px;
     line-height: 34px;
+
+    &_j {
+      text-align: justify;
+      font-size: 16px;
+      line-height: 30px;
+      &:after {
+        content: "";
+        display: block;
+        margin: 35px auto;
+        width: 50px;
+        height: 1px;
+        background-color: #ebebeb;
+      }
+    }
+  }
+  @media (max-width: 1500px) {
+    &__text {
+      &_j {
+        &:after {
+          margin: 15px auto;
+        }
+      }
+    }
   }
 }
+// =====================================================================================
+.brands {
+  &__row {
+    @include flexbox();
+  }
+
+  &__column {
+    flex: 0 1 33.333%;
+    &_b {
+      flex: 0 1 66.667%;
+    }
+  }
+
+  &__item {
+  }
+
+  &__content {
+    padding: 70px 65px 55px 65px;
+    position: relative;
+    &:after {
+      content: "";
+      position: absolute;
+      bottom: -10px;
+      left: 50%;
+      margin: 0px 0px 0px -10px;
+      width: 0;
+      height: 0;
+      border-left: 10px solid transparent;
+      border-right: 10px solid transparent;
+      border-top: 10px solid #fff;
+    }
+  }
+
+  &__image {
+    padding: 0px 0px 37.51% 0px;
+  }
+  @media (max-width: 1500px) {
+    &__content {
+      padding: 40px 35px 30px 35px;
+    }
+  }
+  @media (max-width: 1100px) {
+    &__row {
+      flex-direction: column;
+    }
+  }
+}
+.item {
+  height: 100%;
+  display: block;
+  position: relative;
+  &__logo {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    @include flexbox();
+    @include anim(0.3s, 0s);
+    justify-content: center;
+    align-items: center;
+    z-index: 2;
+    background-color: rgba(100, 194, 158, 0.5);
+    opacity: 0;
+    visibility: hidden;
+  }
+
+  &__image {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+  }
+  &:hover {
+    .item__logo {
+      opacity: 1;
+      visibility: visible;
+    }
+  }
+  @media (max-width: 1100px) {
+    height: auto;
+    padding: 0px 0px 70% 0px;
+  }
+}
+
 // @media (max-width: 1200px) {
 //    .container {
 //       max-width: 970px;
