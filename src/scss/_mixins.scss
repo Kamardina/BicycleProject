@@ -15,3 +15,6 @@
   display: flex;
   font-size: 0;
 }
+@mixin flexorder($val) {
+  box-ordinal-group: $val;
+}
