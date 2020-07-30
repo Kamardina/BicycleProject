@@ -182,6 +182,44 @@
     padding: 0px 0px 70% 0px;
   }
 }
+.slider {
+  background-color: #f7f7f7;
+  padding: 120px 0 60px 0;
+  @media (max-width: 1100px) {
+    padding: 50px 0 30px 0;
+  }
+  &__body {
+  }
+
+  &__item {
+    text-align: center;
+  }
+
+  &__icon {
+    margin: 0 0 35px 0;
+  }
+
+  &__title {
+    margin: 0 0 20px 0;
+    color: #353738;
+    font-size: 18px;
+    font-weight: 700;
+    span {
+      font-weight: 300;
+      color: #848789;
+    }
+  }
+
+  &__text {
+    text-align: center;
+    color: #848789;
+    font-size: 24px;
+    font-style: italic;
+    line-height: 34px;
+  }
+}
+.container {
+}
 
 // @media (max-width: 1200px) {
 //    .container {
