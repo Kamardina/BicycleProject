@@ -155,6 +155,7 @@
     width: 100%;
     height: 100%;
     @include flexbox();
+    flex-direction: column;
     @include anim(0.3s, 0s);
     justify-content: center;
     align-items: center;
@@ -162,6 +163,14 @@
     background-color: rgba(100, 194, 158, 0.5);
     opacity: 0;
     visibility: hidden;
+    span {
+      margin: 10px 0px 0px 0px;
+      font-size: 14px;
+      font-weight: 700;
+      letter-spacing: 2.8px;
+      text-transform: uppercase;
+      color: #fff;
+    }
   }
 
   &__image {
@@ -176,10 +185,10 @@
       opacity: 1;
       visibility: visible;
     }
-  }
-  @media (max-width: 1100px) {
-    height: auto;
-    padding: 0px 0px 70% 0px;
+    @media (max-width: 1100px) {
+      height: auto;
+      padding: 0px 0px 70% 0px;
+    }
   }
 }
 .slider {
@@ -219,6 +228,85 @@
   }
 }
 .container {
+}
+
+// =================================================================
+.shop {
+  &__body {
+    @include flexbox();
+  }
+
+  &__column {
+    flex: 0 1 16.666%;
+    &_b {
+      flex: 0 1 33.333%;
+    }
+  }
+
+  &__block {
+  }
+
+  &__footer {
+    padding: 75px 0;
+    background-color: #282f35;
+    text-align: center;
+  }
+
+  &__btn {
+    display: inline-block;
+    height: 50px;
+    line-height: 48px;
+    letter-spacing: 2.8px;
+    color: #fff;
+    padding: 0px 60px;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    font-size: 14px;
+    font-weight: 700;
+    text-transform: uppercase;
+    text-decoration: none;
+  }
+  @media (max-width: 1100px) {
+    &__body {
+      flex-wrap: wrap;
+    }
+    &__column {
+      flex: 0 1 50%;
+      &:first-child {
+        flex: 1 1 100%;
+      }
+      &:last-child {
+        flex: 1 1 100%;
+      }
+    }
+    &__btn {
+      padding: 0 30px;
+    }
+    &__footer {
+      padding: 50px 0;
+    }
+  }
+}
+.block-shop {
+  height: 100%;
+  &__row {
+    @include flexbox();
+  }
+
+  &__column {
+    flex: 0 1 50%;
+  }
+
+  &__item {
+    height: auto;
+    padding: 0px 0px 50% 0px;
+
+    &_b {
+      padding: 0px 0px 200.5% 0px;
+    }
+    &_l {
+      padding: 0px 0px 100% 0px;
+    }
+  }
 }
 
 // @media (max-width: 1200px) {
